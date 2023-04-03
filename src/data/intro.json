@@ -1,0 +1,100 @@
+{
+    "en": {
+        "paras": [
+            "Before we move on to the actual perception tests, let’s do a trial.",
+            "Click on 🔊 and listen to the audio clip.",
+            "Then, answer the following questions about the person you hear in the audio clip."
+        ],
+        "forms": [
+            {
+                "question": "1. Which age group does the person belong to?",
+                "options": [
+                    "10+",
+                    "18+",
+                    "30+",
+                    "60+"
+                ]
+            },
+            {
+                "question": "2. What type of voice does the person have?",
+                "options": [
+                    "Shrill",
+                    "Moderate",
+                    "Deep"
+                ]
+            },
+            {
+                "question": "3. Is the person speaking in 'Pramit Bangla' or in 'Ancholik Upabhasha'?",
+                "options": [
+                    "Pramit Bangla",
+                    "Ancholik Upabhasha"
+                ]
+            },
+            {
+                "question": "4. How would you categorise the linguistic/geographical background of the person?",
+                "options": [
+                    "Bengali from West Bengal",
+                    "Bengali from Bangladesh",
+                    "Aw-Bengali"
+                ]
+            }
+        ],
+        "form2": [
+            "5. Is there anything in particular that helped you make your choice?",
+            "Add your answer here"
+        ],
+        "form3": [
+            "Click Next to check if your answers are correct.",
+            "Next"
+        ]
+    },
+    "bn": {
+        "paras": [
+            "Before we move on to the actual perception tests, let’s do a trial.",
+            "Click on 🔊 and listen to the audio clip.",
+            "Then, answer the following questions about the person you hear in the audio clip."
+        ],
+        "forms": [
+            {
+                "question": "1. বক্তাকে কোন বয়ঃক্রমভুক্ত (age group) করা যায়?",
+                "options": [
+                    "10+",
+                    "18+",
+                    "30+",
+                    "60+"
+                ]
+            },
+            {
+                "question": "2. বক্তার গলার আওয়াজ অনুযায়ী তাকে কোন শ্রেণীভুক্ত (voice group) করা যায় ?",
+                "options": [
+                    "Shrill",
+                    "Moderate",
+                    "Deep"
+                ]
+            },
+            {
+                "question": "3. ব্যাক্তিটি কি শহুরে/প্রমিত বাংলায় কথা বলেন, নাকি আঞ্চলিক উপভাষায় কথা বলেন’?",
+                "options": [
+                    "Pramit Bangla",
+                    "Ancholik Upabhasha"
+                ]
+            },
+            {
+                "question": "4. ভাষাগত/অঞ্চলগত ভাবে ব্যাক্তিটিকে কোন শ্রেণীভুক্ত করা যায়?",
+                "options": [
+                    "Bengali from West Bengal",
+                    "Bengali from Bangladesh",
+                    "Aw-Bengali"
+                ]
+            }
+        ],
+        "form2": [
+            "5. ব্যাক্তিটির কথাবার্তার মধ্যে ঠিক কি লক্ষ্য করে তাকে অঞ্চলগত ভাবে নির্দিষ্ট শ্রেণীভুক্ত করলেন ?",
+            "এখানে উত্তর/মতামত লিখুন"
+        ],
+        "form3": [
+            "Click Next to check if your answers are correct.",
+            "Next"
+        ]
+    }
+}

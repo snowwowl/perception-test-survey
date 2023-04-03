@@ -1,0 +1,23 @@
+{
+    "en": {
+        "greeting": "Hi..",
+        "paras": [
+            "My name is Sinjini and I’m a research scholar of Forensic Phonetics at The English and Foreign Languages University, Hyderabad, India. My work is in the area of voice research, and I'm looking at the speech of urban Bengali speakers as part of my PhD research.",
+            "As a part of my thesis, I’m trying to look at how voices are processed for indexical information by a listener. In other words, to look at the kind of information a listener gathers about a speaker from their speech (for example, the speaker’s linguistic, social, geographical and ethnic background), and how successful they are in extracting such details about the speaker from their speech.",
+            "As part of this exercise, you will be required to carefully listen to a few sets of words and sentences and a few chunks of audio stories in Bangla followed by perceptual tests. In these tests, there will either be a few questions based on the voice clips you hear, or there could be sorting and labelling tasks. After you finish each set, your scores will be shown to you. Your scores will indicate how successfully you can extract identifying details about a person from their speech.",
+            "If you’re up for a challenge, click Next!"
+        ],
+        "button1": "Next"
+    },
+    "bn": {
+        "greeting": "Hi..",
+        "paras": [
+            "আমি শিঞ্জিনী, হায়দরাবাদে English and Foreign Languages University তে Forensic Phonetics নিয়ে Ph.D. করছি। আমার গবেষণার কাজের একটি অংশ হিসেবে, শহুরে বাঙালীদের গলার আওয়াজ, কথাবার্তা বলার ধরণ সম্পর্কে কিছু তথ্য সংগ্রহ করতে  চাইছি। আপনার সহযোগীতা ছাড়া এই কাজ করাই যাবেনা।",
+            "আমি এই গবেষণায় বুঝতে চাইছি, একজন শ্রোতা (যেমন আপনি) একজন মানুষের গলার আওয়াজ শুনে, সেই মানুষটির জাতিগত, ভাষাগত, সামাজিক ও ভৌগোলিক অবস্থান সম্পর্কে কিভাবে এবং কতোটা ধারণা করতে পারেন।",
+            "তথ্য সংগ্রহের জন্য একটি listening test তৈরী করা হয়েছে। প্রথমে, আপনাকে কয়েকজনের বাংলায় বলে যাওয়া কিছু শব্দ, বাক্য আর অনুগল্প শোনাবো। তারপর থাকবে সেই সম্পর্কিত কিছু প্রশ্নোত্তর, আপনার মতামত নেওয়া; আপনার ধারণা অনুযায়ী সঠিক উত্তরটি লেখা বা বেছে নেওয়া, ইত্যাদি।",
+            "এই listening test এ মোট ৩টি অংশ আছে। প্রত্যেক অংশের উত্তর জমা করার পর চাইলে জেনে নিতে পারবেন score কতো হল। তৃতীয়/ অন্তিম অংশের উত্তর জমা করার পর জেনে নিতে পারবেন চূড়ান্ত score টি। এর থেকে বোঝা যাবে, শুধু গলার আওয়াজে, কথাবার্তা শুনে একজন মানুষের সম্পর্কে কতোটা কি ধারণা করা সম্ভব ( বা আদৌ তা করা যায় কি না!)।",
+            "যদি আপনি এবিষয়ে আগ্রহী হন, এগোনো যাক।"
+        ],
+        "button1": "পরবর্ত্তী"
+    }
+}

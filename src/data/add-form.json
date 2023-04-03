@@ -1,0 +1,33 @@
+{
+    "en": {
+        "quiz1": [
+            ["What is your age?", "00 yrs"],
+            ["What is your mother tongue?", "Mother tongue"],
+            ["What other languages do you speak?", "Language"],
+            ["What is your email ID?", "Email"]
+        ],
+
+        "quiz2": [
+            ["What is your sex assigned at birth?", "Sex"],
+            ["For how many years have you resided in West Bengal/Bangladesh?", "00 yrs"],
+            ["Your highest educational qualification?", "Qualification"]
+        ],
+        "button1": "Next"
+    },
+    "bn": {
+        "quiz1": [
+            ["আপনার বয়স?", "00 yrs"],
+            ["জন্মসময়ে নির্দ্ধারিত লিঙ্গ?", "Mother tongue"],
+            ["এছাড়া আপনি আর অন্য কোন ভাষায় কথা বলেন?", "Language"],
+            ["আপনার email ID কি?", "Email"]
+        ],
+
+        "quiz2": [
+            ["জন্মসময়ে নির্দ্ধারিত লিঙ্গ?", "Sex"],
+            ["আপনি কতোবছর পশ্চিমবাংলায়/ বাংলাদেশে বসবাস করেছেন?", "00 yrs"],
+            ["আপনার সর্বোচ্চ শিক্ষাগত স্তর কোনটি?", "Qualification"]
+        ],
+
+        "button1": "Next"
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "en": {
+        "paras": [
+            "Given below are 10 audio bars. Each bar contains an audio of a sentence in Bangla. Click on the bars to listen to the sentences.",
+            "After you listen to each sentence, click on the drop-down list given next to it to choose the correct category for the speaker."
+        ],
+        "options": [
+            "Urban Bengali Speaker(India)",
+            "Urban Bengali Speaker(Bangladesh)",
+            "Non-native Bengali Speaker"
+        ]
+    },
+
+    "bn": {
+        
+    }
+}

@@ -26,13 +26,13 @@ export default function Quiz({ pageData }) {
                 mx={32}
                 py={16}
             >
-                {/* {pageData.paras.map((el, idx) => {
+                {pageData.paras.map((el, idx) => {
                     return (
                         <Text fontFamily={poppins.style.fontFamily} fontSize={'lg'} key={idx} py={1} color='#5151D2'>
                             {el}
                         </Text>
                     )
-                })} */}
+                })}
 
                 <Box>
                     <Flex>

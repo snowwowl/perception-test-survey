@@ -53,7 +53,7 @@ export default function Hello({ pageData }) {
                     </AlertDialogBody>
                     <AlertDialogFooter justifyContent={'center'}>
                         <Button onClick={(e) => {push(`/${currLang}/hi`)}} size='lg' rounded={32} variant='outline' borderColor='#5151D2' color='#5151D2' backgroundColor='#F5E3E3'>Yes, I do.</Button>
-                        <Button mx={4} size='lg' rounded={32} variant='outline' borderWidth={2} borderColor='#F5E3E3' backgroundColor='#5151D2' color='#F5E3E3'>No, I don't.</Button>
+                        <Button mx={4} size='lg' onClick={(e) => {push(`/bye`)}} rounded={32} variant='outline' borderWidth={2} borderColor='#F5E3E3' backgroundColor='#5151D2' color='#F5E3E3'>No, I don't.</Button>
                     </AlertDialogFooter>
                 </AlertDialogContent>
             </AlertDialog>
@@ -68,7 +68,7 @@ export default function Hello({ pageData }) {
                 })}
                 <Flex position='relative' marginTop='15%' justifyContent='flex-end'>
                     <Stack direction="row" spacing={4}>
-                        <Button size='lg' rounded={32} variant='solid' backgroundColor='#5151D2' color='#F5E3E3'>{pageData.button1}</Button>
+                        <Button size='lg' onClick={(e) => {push(`/bye`)}} rounded={32} variant='solid' backgroundColor='#5151D2' color='#F5E3E3'>{pageData.button1}</Button>
                         <Button onClick={onOpen} size='lg' rounded={32} variant='outline' borderColor='#5151D2' color='#5151D2' backgroundColor='#F5E3E3'>{pageData.button2}</Button>
                     </Stack>
                 </Flex>

@@ -11,6 +11,7 @@ import {
     Button,
     Input
 } from '@chakra-ui/react';
+import { useForm, useFieldArray } from 'react-hook-form'
 import data from '@/data/add-form.json'
 import { Elsie, Poppins } from 'next/font/google';
 import { useRouter } from 'next/router';
@@ -19,8 +20,22 @@ const elsie = Elsie({ weight: '400', subsets: ['latin'] });
 const poppins = Poppins({ weight: '400', subsets: ['latin'] });
 
 export default function AddForm({ pageData }) {
-    const {push, query} = useRouter();
+    const { push, query } = useRouter();
     const currLang = query.lang;
+
+    const {
+        handleSubmit,
+        register,
+        formState: { errors, isSubmitting, submitCount, isValid },
+        getValues,
+        control
+    } = useForm();
+
+    const { fields, append, prepend, remove, swap, move, insert } = useFieldArray({
+        control,
+        name: "addform", // unique name for your Field Array
+    });
+
     return (
         <>
             <Box height={'100vh'} mx={32} py={8} >
@@ -33,7 +48,7 @@ export default function AddForm({ pageData }) {
                                         {el[0]}
                                     </Text>
                                     <Divider color='#5151D2' height={'2px'} w='100px' />
-                                    <Input backgroundColor={'white'} width={'full'} variant={'filled'} placeholder={el[1]} />
+                                    <Input {...register(`addform.${idx}.value`)} backgroundColor={'white'} width={'full'} variant={'filled'} placeholder={el[1]} />
                                 </Box>
                             )
                         })}
@@ -46,7 +61,7 @@ export default function AddForm({ pageData }) {
                                         {el[0]}
                                     </Text>
                                     <Divider color='#5151D2' height={'2px'} w='100px' />
-                                    <Input backgroundColor={'white'} width={'full'} variant={'filled'} placeholder={el[1]} />
+                                    <Input {...register(`addform.${3 + idx}.value`)} backgroundColor={'white'} width={'full'} variant={'filled'} placeholder={el[1]} />
                                 </Box>
                             )
                         })}
@@ -64,6 +79,10 @@ export default function AddForm({ pageData }) {
                     >
                         {pageData.button1}
                     </Button>
+                    <Button onClick={(e) => {
+                        const values = getValues();
+                        console.log(JSON.stringify(values, null, 2));
+                    }}>debug</Button>
                 </Flex>
             </Box>
         </>

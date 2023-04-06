@@ -9,7 +9,6 @@ import {
     Select,
     Textarea,
     Button,
-    IconButton,
     StackDivider
 } from '@chakra-ui/react';
 import data from '@/data/section2/quiz.json'
@@ -28,13 +27,9 @@ export default function Quiz({ pageData }) {
                 mx={32}
                 py={16}
             >
-                {pageData.quiz1.map((el, idx) => {
-                    return (
-                        <Text fontFamily={poppins.style.fontFamily} fontSize={'lg'} key={idx} py={1} color='#5151D2'>
-                            {el}
-                        </Text>
-                    )
-                })}
+                <Text fontFamily={poppins.style.fontFamily} fontSize={'lg'}  py={1} color='#5151D2'>
+                   {pageData.quiz4}
+                </Text>
                 <Box width={'full'} pt={16}>
                     <Stack justifyContent={'space-around'} divider={<StackDivider borderColor='#9797EF' borderWidth={'2px'} rounded={16} />} direction={'row'}>
                         <Stack direction='column' >
@@ -61,8 +56,7 @@ export default function Quiz({ pageData }) {
                         rounded={32}
                         variant='solid'
                         color='#F5E3E3'
-                        backgroundColor='#5151D2'
-                        
+                        backgroundColor='#5151D2'                       
                     >
                         Next
                     </Button>

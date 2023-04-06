@@ -5,7 +5,7 @@ import {
   Stack,
   Text
 } from '@chakra-ui/react';
-import {Select} from 'antd';
+import { Select } from 'antd';
 import { Elsie } from 'next/font/google';
 import { useRouter } from 'next/router';
 

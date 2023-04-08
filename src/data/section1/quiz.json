@@ -3,6 +3,10 @@
         "quiz1": [
             "Given below are 20 audio buttons. Each button contains an audio of a Bengali word. Click on the buttons to listen to the words. Pay attention to the word and the speaker when you play an audio.",
             "After you listen to each word, categorise the speaker you hear in the clip by clicking on the blue box / red box / yellow box."
+        ],
+        "quiz2": [
+            "Now the next set of words… Click on the buttons to listen to the words. Pay attention to the word and the speaker when you play an audio.",
+            "After you listen to each word, categorise the speaker you hear in the clip by clicking on the blue box / red box / yellow box."
         ]
     }
 }

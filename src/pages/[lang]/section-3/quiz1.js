@@ -10,18 +10,15 @@ import {
     Icon,
     IconButton
 } from '@chakra-ui/react';
-import data from '@/data/section1/quiz.json';
+import data from '@/data/section3/quiz.json';
 import { Elsie, Poppins } from 'next/font/google';
 import AudioButton from '@/components/AudioButton';
-import { useRouter } from 'next/router';
 
 import { BsFillSquareFill } from 'react-icons/bs'
 const elsie = Elsie({ weight: '900', subsets: ['latin'] });
 const poppins = Poppins({ weight: '400', subsets: ['latin'] });
 
 export default function Quiz({ pageData }) {
-    const {push, query} = useRouter();
-    const currLang = query.lang;
 
     const blue = ['#5151D2', 'blue'];
     const red = ['#D8695B', 'red'];
@@ -87,7 +84,7 @@ export default function Quiz({ pageData }) {
                         flexDirection={'row'}
                         flexWrap={'wrap'}
                         flexBasis={'100%'}>
-                        {[...Array(20)].map((el, idx) => <AudioButton onButtonClick={(e) => console.log(e)} key={idx} title={`Word ${idx + 1}`} />)}
+                        {[...Array(20)].map((el, idx) => <AudioButton onButtonClick={(e) => console.log(e)} key={idx} title={`Clip ${idx + 1}`} />)}
                     </Flex>
                 </Box>
 
@@ -99,9 +96,6 @@ export default function Quiz({ pageData }) {
                         variant='solid'
                         color='#F5E3E3'
                         backgroundColor='#5151D2'
-                        onClick={(e) => {
-                            push(`/${currLang}/section-1/quiz2`);
-                        }}
                     >
                         Next
                     </Button>

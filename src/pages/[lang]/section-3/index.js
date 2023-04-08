@@ -18,8 +18,7 @@ const elsie = Elsie({ weight: '900', subsets: ['latin'] });
 const poppins = Poppins({ weight: '400', subsets: ['latin'] });
 
 export default function Section1() {
-    const {push, query} = useRouter();
-    const currLang = query.lang;
+    const {query, isReady} = useRouter();
 
     return (
         <>
@@ -38,7 +37,7 @@ export default function Section1() {
                         color='#9797EF'
                         fontSize={'lg'}
                     >
-                        {query.lang == 'bn' ? 'অংশ ১' : 'Section 1'}
+                        {query.lang == 'bn' ? 'অংশ ৩' : 'Section 3'}
                     </Text>
                     <Text
                         fontFamily={elsie.style.fontFamily}
@@ -46,7 +45,7 @@ export default function Section1() {
                         fontSize='12em'
                         paddingBottom={8}
                     >
-                        {query.lang == 'bn' ? 'শব্দমালা': 'Words'}
+                        {query.lang == 'bn' ? 'অনুগল্প': 'Audio Chunks'}
                     </Text>
                     <Box w='40%'>
                         <Button
@@ -57,9 +56,7 @@ export default function Section1() {
                             variant='solid'
                             color='#F5E3E3'
                             backgroundColor='#5151D2'
-                            onClick={(e) => {
-                                push(`/${currLang}/section-1/quiz1`);
-                            }}
+
                         >
                             Continue
                         </Button>

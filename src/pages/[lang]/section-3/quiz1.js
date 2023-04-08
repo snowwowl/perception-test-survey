@@ -50,7 +50,7 @@ export default function Quiz({ pageData }) {
                                 icon={rect}
                                 cursor='default'
                             />
-                            <Text fontWeight='semibold' pt={2} color='#5151D2' fontFamily={poppins.style.fontFamily} fontSize={'lg'}>Urban Bengali Speaker (India)</Text>
+                            <Text fontWeight='semibold' pt={2} color='#5151D2' fontFamily={poppins.style.fontFamily} fontSize={'lg'}>{pageData.helper[0]}</Text>
                         </Stack>
                         <Stack direction='row'>
                             <IconButton
@@ -61,7 +61,7 @@ export default function Quiz({ pageData }) {
                                 icon={rect}
                                 cursor='default'
                             />
-                            <Text fontWeight='semibold' pt={2} color='#5151D2' fontFamily={poppins.style.fontFamily} fontSize={'lg'}>Urban Bengali Speaker (Bangladesh)</Text>
+                            <Text fontWeight='semibold' pt={2} color='#5151D2' fontFamily={poppins.style.fontFamily} fontSize={'lg'}>{pageData.helper[1]}</Text>
                         </Stack>
                         <Stack direction='row'>
                             <IconButton
@@ -72,7 +72,7 @@ export default function Quiz({ pageData }) {
                                 icon={rect}
                                 cursor='default'
                             />
-                            <Text fontWeight='semibold' pt={2} color='#5151D2' fontFamily={poppins.style.fontFamily} fontSize={'lg'}> Non-native Bengali Speaker</Text>
+                            <Text fontWeight='semibold' pt={2} color='#5151D2' fontFamily={poppins.style.fontFamily} fontSize={'lg'}> {pageData.helper[2]}</Text>
                         </Stack>
                     </Stack>
                 </Box>
@@ -84,7 +84,7 @@ export default function Quiz({ pageData }) {
                         flexDirection={'row'}
                         flexWrap={'wrap'}
                         flexBasis={'100%'}>
-                        {[...Array(20)].map((el, idx) => <AudioButton onButtonClick={(e) => console.log(e)} key={idx} title={`Clip ${idx + 1}`} />)}
+                        {[...Array(22)].map((el, idx) => <AudioButton onButtonClick={(e) => console.log(e)} key={idx} title={`Clip ${idx + 1}`} />)}
                     </Flex>
                 </Box>
 
@@ -96,6 +96,7 @@ export default function Quiz({ pageData }) {
                         variant='solid'
                         color='#F5E3E3'
                         backgroundColor='#5151D2'
+
                     >
                         Next
                     </Button>

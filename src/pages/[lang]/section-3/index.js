@@ -56,7 +56,9 @@ export default function Section1() {
                             variant='solid'
                             color='#F5E3E3'
                             backgroundColor='#5151D2'
-
+                            onClick={(e) => {
+                                push(`/${currLang}/section-3/quiz1`)
+                            }}
                         >
                             Continue
                         </Button>

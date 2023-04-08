@@ -8,10 +8,19 @@ import {
 } from '@chakra-ui/react';
 import { Poppins } from 'next/font/google';
 import {RxSpeakerLoud} from 'react-icons/rx';
+import {Howl} from 'howler';
 
 const poppins = Poppins({ weight: '400', subsets: ['latin'] });
 
 export default function Sentence({url, idx}) {
+    const sound = new Howl({
+        src: [url],
+        autoplay: false,
+        onend: () => {
+            console.log('finished playing ' + idx);
+        },
+        html5: true
+    });
     return (
         <>
             <Stack direction='row' spacing={6} justifyContent='space-evenly'>
@@ -21,6 +30,10 @@ export default function Sentence({url, idx}) {
                 size={'lg'}
                 _hover={{ backgroundColor: "#BEBEEF" }}
                 color="#5151D2"
+                onClick={(e) => {
+                    console.log("started playing " + idx)
+                    sound.play();
+                }}
             >
                 Sentence {idx}
             </Button>

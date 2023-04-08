@@ -18,7 +18,8 @@ const elsie = Elsie({ weight: '900', subsets: ['latin'] });
 const poppins = Poppins({ weight: '400', subsets: ['latin'] });
 
 export default function Section2() {
-    const {query, isReady} = useRouter();
+    const {push, query} = useRouter();
+    const currLang = query.lang;
     return (
         <>
             <Container maxW='4xl'>
@@ -54,7 +55,9 @@ export default function Section2() {
                             variant='solid'
                             color='#F5E3E3'
                             backgroundColor='#5151D2'
-
+                            onClick={(e) => {
+                                push(`/${currLang}/section-2/quiz1`)
+                            }}
                         >
                             Continue
                         </Button>

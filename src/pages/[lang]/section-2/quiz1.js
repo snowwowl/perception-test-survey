@@ -15,12 +15,16 @@ import {
 import data from '@/data/section2/quiz.json'
 import { Elsie, Poppins } from 'next/font/google';
 import Sentence from '@/components/Sentence';
+import { useRouter } from 'next/router';
 
 const elsie = Elsie({ weight: '900', subsets: ['latin'] });
 const poppins = Poppins({ weight: '400', subsets: ['latin'] });
 
 
 export default function Quiz({ pageData }) {
+    const {push, query} = useRouter();
+    const currLang = query.lang;
+
     return (
         <>
             <Box
@@ -40,14 +44,14 @@ export default function Quiz({ pageData }) {
                         <Stack direction='column' >
                             {[1, 2, 3, 4, 5].map((el, idx) => {
                                 return (
-                                    <Sentence url="https://www.google.com" idx={el} />
+                                    <Sentence url={pageData.audiofiles[el - 1]} idx={el} />
                                 )
                             })}
                         </Stack>
                         <Stack direction='column'>
                             {[6, 7, 8, 9, 10].map((el, idx) => {
                                 return (
-                                    <Sentence url="https://www.google.com" idx={el} />
+                                    <Sentence url={pageData.audiofiles[el - 1]} idx={el} />
                                 )
                             })}
                         </Stack>
@@ -62,7 +66,9 @@ export default function Quiz({ pageData }) {
                         variant='solid'
                         color='#F5E3E3'
                         backgroundColor='#5151D2'
-                        
+                        onClick={(e) => {
+                            push(`/${currLang}/section-2/quiz2`)
+                        }}
                     >
                         Next
                     </Button>

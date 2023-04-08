@@ -13,12 +13,15 @@ import {
 import data from '@/data/section1/quiz.json';
 import { Elsie, Poppins } from 'next/font/google';
 import AudioButton from '@/components/AudioButton';
+import { useRouter } from 'next/router';
 
 import { BsFillSquareFill } from 'react-icons/bs'
 const elsie = Elsie({ weight: '900', subsets: ['latin'] });
 const poppins = Poppins({ weight: '400', subsets: ['latin'] });
 
 export default function Quiz({ pageData }) {
+    const {push, query} = useRouter();
+    const currLang = query.lang;
 
     const blue = ['#5151D2', 'blue'];
     const red = ['#D8695B', 'red'];
@@ -50,7 +53,7 @@ export default function Quiz({ pageData }) {
                                 icon={rect}
                                 cursor='default'
                             />
-                            <Text fontWeight='semibold' pt={2} color='#5151D2' fontFamily={poppins.style.fontFamily} fontSize={'lg'}>Urban Bengali Speaker (India)</Text>
+                            <Text fontWeight='semibold' pt={2} color='#5151D2' fontFamily={poppins.style.fontFamily} fontSize={'lg'}>{pageData.helper[0]}</Text>
                         </Stack>
                         <Stack direction='row'>
                             <IconButton
@@ -61,7 +64,7 @@ export default function Quiz({ pageData }) {
                                 icon={rect}
                                 cursor='default'
                             />
-                            <Text fontWeight='semibold' pt={2} color='#5151D2' fontFamily={poppins.style.fontFamily} fontSize={'lg'}>Urban Bengali Speaker (Bangladesh)</Text>
+                            <Text fontWeight='semibold' pt={2} color='#5151D2' fontFamily={poppins.style.fontFamily} fontSize={'lg'}>{pageData.helper[1]}</Text>
                         </Stack>
                         <Stack direction='row'>
                             <IconButton
@@ -72,7 +75,7 @@ export default function Quiz({ pageData }) {
                                 icon={rect}
                                 cursor='default'
                             />
-                            <Text fontWeight='semibold' pt={2} color='#5151D2' fontFamily={poppins.style.fontFamily} fontSize={'lg'}> Non-native Bengali Speaker</Text>
+                            <Text fontWeight='semibold' pt={2} color='#5151D2' fontFamily={poppins.style.fontFamily} fontSize={'lg'}> {pageData.helper[2]}</Text>
                         </Stack>
                     </Stack>
                 </Box>
@@ -96,6 +99,9 @@ export default function Quiz({ pageData }) {
                         variant='solid'
                         color='#F5E3E3'
                         backgroundColor='#5151D2'
+                        onClick={(e) => {
+                            push(`/${currLang}/section-2/`)
+                        }}
                     >
                         Submit
                     </Button>

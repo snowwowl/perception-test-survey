@@ -87,7 +87,7 @@ export default function Quiz({ pageData }) {
                         flexDirection={'row'}
                         flexWrap={'wrap'}
                         flexBasis={'100%'}>
-                        {[...Array(20)].map((el, idx) => <AudioButton onButtonClick={(e) => console.log(e)} key={idx} title={`Word ${idx + 21}`} />)}
+                        {[...Array(20)].map((el, idx) => <AudioButton onButtonClick={(e) => console.log(e)} key={idx} audioSrc={`${pageData.audiofiles[idx + 20]}`} title={`Word ${idx + 21}`} />)}
                     </Flex>
                 </Box>
 

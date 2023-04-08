@@ -13,13 +13,17 @@ import {Howl} from 'howler';
 const poppins = Poppins({ weight: '400', subsets: ['latin'] });
 
 export default function Sentence({url, idx}) {
+    const [loading, setLoading] = useState(true);
     const sound = new Howl({
         src: [url],
         autoplay: false,
         onend: () => {
             console.log('finished playing ' + idx);
         },
-        html5: true
+        html5: true,
+        onload: () => {
+            setLoading(false);
+        }
     });
     return (
         <>
@@ -34,6 +38,7 @@ export default function Sentence({url, idx}) {
                     console.log("started playing " + idx)
                     sound.play();
                 }}
+                isLoading={loading}
             >
                 Sentence {idx}
             </Button>

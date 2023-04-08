@@ -1,13 +1,37 @@
 {
     "en": {
         "quiz1": [
-            "Given below are 22 audio clips. Each clip contains a short excerpt from a story narration. Click on the squares to listen to them. Note: The content of the clip is not of importance. Focus your attention towards the speech characteristics of the speaker in each clip.", 
+            "Given below are 22 audio clips. Each clip contains a short excerpt from a story narration. Click on the squares to listen to them. Note: The content of the clip is not of importance. Focus your attention towards the speech characteristics of the speaker in each clip.",
             "After you listen to each clip, categorise the speaker you hear in the clip by clicking on the blue box / red box / yellow box."
         ],
         "helper": [
             "Urban Bengali Speaker (India)",
             "Urban Bengali Speaker (Bangladesh)",
             "Non-native Bengali Speaker"
+        ],
+        "audiofiles": [
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+1.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+2.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+3.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+4.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+5.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+6.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+7.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+8.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+9.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+10.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+11.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+12.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+13.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+14.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+15.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+16.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+17.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+18.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+19.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+20.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+21.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+22.wav"
         ]
     },
     "bn": {
@@ -19,6 +43,30 @@
             "ভারতীয়, শহুরে বাঙালী ",
             "বাংলাদেশীয়, শহুরে বাঙালী",
             "অবাঙালী"
+        ],
+        "audiofiles": [
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+1.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+2.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+3.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+4.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+5.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+6.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+7.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+8.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+9.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+10.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+11.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+12.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+13.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+14.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+15.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+16.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+17.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+18.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+19.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+20.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+21.wav",
+            "https://f004.backblazeb2.com/file/surveydata/audiochunks/Audio+chunk+22.wav"
         ]
     }
 }

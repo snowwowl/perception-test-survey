@@ -30,9 +30,18 @@ function darkerColor(rgbColor, factor = 0.2) {
 const varToString = varObj => Object.keys(varObj)[0]
 
 export default function AudioButton(props) {
+    const [loading, setLoading] = useState(true);
     const rect = <Icon as={BsFillSquareFill} w={6} h={6} />;
-    const sound1 = new Howl({
-        src: [props.audioSrc]
+    const sound = new Howl({
+        src: [props.audioSrc],
+        autoplay: false,
+        onend: () => {
+            console.log('finished playing ' + props.title);
+        },
+        html5: true,
+        onload: () => {
+            setLoading(false);
+        }
     });
 
     const blue = ['#5151D2', 'blue'];
@@ -49,7 +58,19 @@ export default function AudioButton(props) {
         <>
             <Box>
                 <Stack direction='column' spacing={0}>
-                    <Button fontSize="lg" padding={8} rightIcon={<RxSpeakerLoud />} _hover={{ backgroundColor: "#5151D2" }} backgroundColor="#9797EF" color="#F5E3E3" variant='solid'>
+                    <Button 
+                    fontSize="lg" 
+                    padding={8} 
+                    rightIcon={<RxSpeakerLoud />} 
+                    _hover={{ backgroundColor: "#5151D2" }} 
+                    backgroundColor="#9797EF" 
+                    color="#F5E3E3" 
+                    variant='solid'
+                    onClick={(e) => {
+                        sound.play();
+                    }}
+                    isLoading={loading}
+                    >
                         {props.title}
                     </Button>
                     <Stack justifyContent={'center'} direction="row" spacing={1}>
@@ -65,6 +86,7 @@ export default function AudioButton(props) {
                                     icon={rect}
                                     key={i}
                                     onClick={() => handleButtonClick(`${el[1]}button`)}
+                                    isDisabled={loading}
                                 />
                             )
                         })}

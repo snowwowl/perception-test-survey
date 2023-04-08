@@ -18,8 +18,9 @@ const elsie = Elsie({ weight: '900', subsets: ['latin'] });
 const poppins = Poppins({ weight: '400', subsets: ['latin'] });
 
 export default function Section1() {
-    const {query, isReady} = useRouter();
-
+    const {push, query} = useRouter();
+    const currLang = query.lang;
+    
     return (
         <>
             <Container maxW='4xl'>

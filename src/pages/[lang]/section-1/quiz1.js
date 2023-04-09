@@ -45,10 +45,7 @@ export default function Quiz({ pageData }) {
         name: "quiz1form1", // unique name for your Field Array
     });
 
-    function handleDebug() {
-        console.log('debug clicked');
-
-
+    function handleClick() {
         const values = getValues().quiz1form1;
         //console.log(JSON.stringify(values, null, 2))
 
@@ -59,17 +56,12 @@ export default function Quiz({ pageData }) {
                 status: 'warning',
                 duration: 5000,
                 isClosable: true
-            })
+            });
+            return;
         }
 
-
-        // values.map(el => {
-        //     if(Object.values(el).includes([undefined])){
-        //         console.log('form not filled');
-        //         return;
-        //     }
-        // })
-
+        //TODO: Add push to db function here
+        push(`/${currLang}/section-1/quiz2`);
 
 
 
@@ -146,7 +138,7 @@ export default function Quiz({ pageData }) {
                                             selectedValue={value}
                                             onButtonClick={onChange}
                                             key={idx}
-                                            audioSrc={`${pageData.audiofiles[idx]}`}
+                                            audioSrc={`gsgsg${pageData.audiofiles[idx]}`}
                                             title={`Word ${idx + 1}`} />
                                     )}
                                 />
@@ -156,7 +148,7 @@ export default function Quiz({ pageData }) {
                 </Box>
 
                 <Box position='absolute' right='16' pt={8} pb={4}>
-                    <Button onClick={(e) => handleDebug()}>debug</Button>
+                    {/* <Button onClick={(e) => handleDebug()}>debug</Button> */}
                     <Button
                         _hover={{ color: 'black' }}
                         size='lg'
@@ -164,14 +156,10 @@ export default function Quiz({ pageData }) {
                         variant='solid'
                         color='#F5E3E3'
                         backgroundColor='#5151D2'
-                        onClick={(e) => {
-
-                            push(`/${currLang}/section-1/quiz2`);
-                        }}
+                        onClick={(e) => handleClick()}
                     >
                         Next
                     </Button>
-
                 </Box>
             </Box>
 

@@ -89,7 +89,7 @@ export default function AudioButton(props) {
                                     icon={rect}
                                     key={i}
                                     onClick={() => handleButtonClick(`${el[1]}`)}
-                                    isDisabled={loading}
+                                    // isDisabled={loading}
                                 />
                             )
                         })}

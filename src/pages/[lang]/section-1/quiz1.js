@@ -8,7 +8,8 @@ import {
     Flex,
     Button,
     Icon,
-    IconButton
+    IconButton,
+    useToast 
 } from '@chakra-ui/react';
 import data from '@/data/section1/quiz.json';
 import { Elsie, Poppins } from 'next/font/google';
@@ -29,6 +30,7 @@ export default function Quiz({ pageData }) {
     const red = ['#D8695B', 'red'];
     const yellow = ['#D8A85B', 'yellow'];
 
+    const toast = useToast();
     const rect = <Icon as={BsFillSquareFill} w={6} h={6} />;
 
     const {
@@ -48,8 +50,17 @@ export default function Quiz({ pageData }) {
 
 
         const values = getValues().quiz1form1;
+        //console.log(JSON.stringify(values, null, 2))
 
-        values.filter(value => Object.values(value).includes(undefined));
+        if(values.filter(value => Object.values(value).includes(undefined)).length != 0){
+            toast({
+                title: "Form Incomplete",
+                description: "Please fill out the whole form to continue",
+                status: 'warning',
+                duration: 5000,
+                isClosable: true
+            })
+        }
 
 
         // values.map(el => {
@@ -129,7 +140,7 @@ export default function Quiz({ pageData }) {
                                 <Controller
                                     key={idx}
                                     control={control}
-                                    name={`quiz1form1.${idx}.value${idx + 1}`}
+                                    name={`quiz1form1.${idx}.word${idx + 1}`}
                                     render={({ field: { value, onChange } }) => (
                                         <AudioButton
                                             selectedValue={value}

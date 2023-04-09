@@ -22,7 +22,7 @@ const elsie = Elsie({ weight: '900', subsets: ['latin'] });
 const poppins = Poppins({ weight: '400', subsets: ['latin'] });
 
 export default function Quiz({ pageData }) {
-    const {push, query} = useRouter();
+    const { push, query } = useRouter();
     const currLang = query.lang;
 
     const blue = ['#5151D2', 'blue'];
@@ -40,14 +40,27 @@ export default function Quiz({ pageData }) {
     } = useForm();
     const { fields, append, prepend, remove, swap, move, insert } = useFieldArray({
         control,
-        name: "quizform", // unique name for your Field Array
-      });
-    
-    function handleDebug(){
+        name: "quiz1form1", // unique name for your Field Array
+    });
+
+    function handleDebug() {
         console.log('debug clicked');
-        
-        const values = getValues();
-        console.log(JSON.stringify(values, null, 2));
+
+
+        const values = getValues().quiz1form1;
+
+        values.filter(value => Object.values(value).includes(undefined));
+
+
+        // values.map(el => {
+        //     if(Object.values(el).includes([undefined])){
+        //         console.log('form not filled');
+        //         return;
+        //     }
+        // })
+
+
+
 
     }
 
@@ -110,17 +123,24 @@ export default function Quiz({ pageData }) {
                         flexDirection={'row'}
                         flexWrap={'wrap'}
                         flexBasis={'100%'}>
+
                         {[...Array(20)].map((el, idx) => {
-                        return (
-                            <Controller
-                            control={control}
-                            name={`quizform.${idx}.value`}
-                            defaultValue={[]}
-                            render={( { field: {value, onChange} }) => (
-                                <AudioButton selectedValue={value} onButtonClick={onChange} key={idx} audioSrc={`${pageData.audiofiles[idx]}`} title={`Word ${idx + 1}`} />
-                            )}
-                            />
-                        )})}
+                            return (
+                                <Controller
+                                    key={idx}
+                                    control={control}
+                                    name={`quiz1form1.${idx}.value${idx + 1}`}
+                                    render={({ field: { value, onChange } }) => (
+                                        <AudioButton
+                                            selectedValue={value}
+                                            onButtonClick={onChange}
+                                            key={idx}
+                                            audioSrc={`${pageData.audiofiles[idx]}`}
+                                            title={`Word ${idx + 1}`} />
+                                    )}
+                                />
+                            )
+                        })}
                     </Flex>
                 </Box>
 
@@ -134,12 +154,13 @@ export default function Quiz({ pageData }) {
                         color='#F5E3E3'
                         backgroundColor='#5151D2'
                         onClick={(e) => {
+
                             push(`/${currLang}/section-1/quiz2`);
                         }}
                     >
                         Next
                     </Button>
-                    
+
                 </Box>
             </Box>
 

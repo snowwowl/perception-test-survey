@@ -15,8 +15,6 @@ import { Elsie, Poppins } from 'next/font/google';
 import AudioButton from '@/components/AudioButton';
 import { useRouter } from 'next/router';
 
-import { Controller, useForm, useFieldArray } from 'react-hook-form';
-
 import { BsFillSquareFill } from 'react-icons/bs'
 const elsie = Elsie({ weight: '900', subsets: ['latin'] });
 const poppins = Poppins({ weight: '400', subsets: ['latin'] });
@@ -30,25 +28,11 @@ export default function Quiz({ pageData }) {
     const yellow = ['#D8A85B', 'yellow'];
 
     const rect = <Icon as={BsFillSquareFill} w={6} h={6} />;
-
-    const {
-        handleSubmit,
-        register,
-        formState: { errors, isSubmitting, submitCount, isValid },
-        getValues,
-        control
-    } = useForm();
-    const { fields, append, prepend, remove, swap, move, insert } = useFieldArray({
-        control,
-        name: "quizform", // unique name for your Field Array
-      });
     
     function handleDebug(){
         console.log('debug clicked');
-        
-        const values = getValues();
-        console.log(JSON.stringify(values, null, 2));
 
+        
     }
 
     return (
@@ -110,17 +94,7 @@ export default function Quiz({ pageData }) {
                         flexDirection={'row'}
                         flexWrap={'wrap'}
                         flexBasis={'100%'}>
-                        {[...Array(20)].map((el, idx) => {
-                        return (
-                            <Controller
-                            control={control}
-                            name={`quizform.${idx}.value`}
-                            defaultValue={[]}
-                            render={( { field: {value, onChange} }) => (
-                                <AudioButton selectedValue={value} onButtonClick={onChange} key={idx} audioSrc={`${pageData.audiofiles[idx]}`} title={`Word ${idx + 1}`} />
-                            )}
-                            />
-                        )})}
+                        {[...Array(20)].map((el, idx) => <AudioButton onButtonClick={(e) => console.log(e)} key={idx} audioSrc={`${pageData.audiofiles[idx]}`} title={`Word ${idx + 1}`} />)}
                     </Flex>
                 </Box>
 

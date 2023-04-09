@@ -50,9 +50,11 @@ export default function AudioButton(props) {
 
     const handleButtonClick = (buttonName) => {
         props.onButtonClick(buttonName);
+        setSelected(buttonName);
+        
     }
 
-
+    const [selected, setSelected] = useState('');
 
     return (
         <>
@@ -79,13 +81,14 @@ export default function AudioButton(props) {
                                 <IconButton
                                     roundedTop={0}
                                     _hover={{ backgroundColor: darkerColor(el[0], 0.5) }}
+                                    backgroundColor={selected == el[1] ? darkerColor(el[0], 0.5) : ''}
                                     borderTop={0}
                                     colorScheme={`${el[0]}`}
                                     color={el[0]}
                                     variant="outline"
                                     icon={rect}
                                     key={i}
-                                    onClick={() => handleButtonClick(`${el[1]}button`)}
+                                    onClick={() => handleButtonClick(`${el[1]}`)}
                                     isDisabled={loading}
                                 />
                             )

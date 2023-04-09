@@ -12,7 +12,7 @@ import {Howl} from 'howler';
 
 const poppins = Poppins({ weight: '400', subsets: ['latin'] });
 
-export default function Sentence({url, idx}) {
+export default function Sentence({url, idx, onChange}) {
     const [loading, setLoading] = useState(true);
     const sound = new Howl({
         src: [url],
@@ -25,6 +25,11 @@ export default function Sentence({url, idx}) {
             setLoading(false);
         }
     });
+
+    const handleChange= (buttonName) => {
+        onChange(buttonName);
+        // setSelected(buttonName);
+    }
     return (
         <>
             <Stack direction='row' spacing={6} justifyContent='space-evenly'>
@@ -43,7 +48,7 @@ export default function Sentence({url, idx}) {
                 Sentence {idx}
             </Button>
                 {/* <IconButton pb={2} fontSize='20px' color='blue' variant={'outline'} aria-label='Search database' icon={<MdOutlineAudiotrack />} /> */}
-                <Select maxW="full" variant='filled'  placeholder="Select option">
+                <Select maxW="full" variant='filled' onChange={(e) => handleChange(e.target.value)}  placeholder="Select option">
                     <option>Urban Bengali Speaker (India)</option>
                     <option>Urban Bengali Speaker (Bangladesh)</option>
                     <option>Non-native Bengali Speaker</option>

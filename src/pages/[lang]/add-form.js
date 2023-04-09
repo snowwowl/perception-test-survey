@@ -15,6 +15,7 @@ import { useForm, useFieldArray } from 'react-hook-form'
 import data from '@/data/add-form.json'
 import { Elsie, Poppins } from 'next/font/google';
 import { useRouter } from 'next/router';
+import localforage from 'localforage';
 
 const elsie = Elsie({ weight: '400', subsets: ['latin'] });
 const poppins = Poppins({ weight: '400', subsets: ['latin'] });
@@ -35,6 +36,16 @@ export default function AddForm({ pageData }) {
         control,
         name: "addform", // unique name for your Field Array
     });
+
+
+    function handleClick(){
+        const values = getValues().addform;
+        localforage.setItem("addform", values).then(() => {
+            console.log('done upload add-form');
+            push(`/${currLang}/section-1/`);
+        });
+        
+    }
 
     return (
         <>
@@ -75,14 +86,14 @@ export default function AddForm({ pageData }) {
                         variant='solid'
                         color='#F5E3E3'
                         backgroundColor='#5151D2'
-                        onClick={(e) => { push(`/${currLang}/intro-result`) }}
+                        onClick={(e) => { handleClick(); }}
                     >
                         {pageData.button1}
                     </Button>
-                    <Button onClick={(e) => {
-                        const values = getValues();
-                        console.log(JSON.stringify(values, null, 2));
-                    }}>debug</Button>
+                    {/* <Button onClick={(e) => {
+                        localforage.getItem("addform", (err, val) => console.log(val));
+                        localforage.getItem("introform", (err, val) => console.log(val));
+                    }}>debug</Button> */}
                 </Flex>
             </Box>
         </>

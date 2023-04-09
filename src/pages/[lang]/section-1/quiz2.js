@@ -8,12 +8,16 @@ import {
     Flex,
     Button,
     Icon,
-    IconButton
+    IconButton,
+    useToast
 } from '@chakra-ui/react';
 import data from '@/data/section1/quiz.json';
 import { Elsie, Poppins } from 'next/font/google';
 import AudioButton from '@/components/AudioButton';
 import { useRouter } from 'next/router';
+
+import { Controller, useForm, useFieldArray } from 'react-hook-form';
+import localforage from 'localforage';
 
 import { BsFillSquareFill } from 'react-icons/bs'
 const elsie = Elsie({ weight: '900', subsets: ['latin'] });
@@ -28,6 +32,42 @@ export default function Quiz({ pageData }) {
     const yellow = ['#D8A85B', 'yellow'];
 
     const rect = <Icon as={BsFillSquareFill} w={6} h={6} />;
+
+    const toast = useToast();
+    const {
+        handleSubmit,
+        register,
+        formState: { errors, isSubmitting, submitCount, isValid },
+        getValues,
+        control
+    } = useForm();
+    const { fields, append, prepend, remove, swap, move, insert } = useFieldArray({
+        control,
+        name: "quiz1form2", // unique name for your Field Array
+    });
+
+    function handleClick() {
+        const values = getValues().quiz1form2;
+        console.log(JSON.stringify(values, null, 2))
+
+        if(values.filter(value => Object.values(value).includes(undefined)).length != 0){
+            toast({
+                title: "Form Incomplete",
+                description: "Please fill out the whole form to continue",
+                status: 'warning',
+                duration: 5000,
+                isClosable: true
+            });
+            return;
+        }
+
+        
+        localforage.setItem("section1quiz2", values, () => {
+            push(`/${currLang}/section-2/`);
+        })
+        
+    }
+
     return (
         <>
             <Box
@@ -87,8 +127,23 @@ export default function Quiz({ pageData }) {
                         flexDirection={'row'}
                         flexWrap={'wrap'}
                         flexBasis={'100%'}>
-                        {[...Array(20)].map((el, idx) => <AudioButton onButtonClick={(e) => console.log(e)} key={idx} audioSrc={`${pageData.audiofiles[idx + 20]}`} title={`Word ${idx + 21}`} />)}
-                    </Flex>
+                        {[...Array(20)].map((el, idx) => {
+                            return (
+                                <Controller
+                                    key={idx}
+                                    control={control}
+                                    name={`quiz1form2.${idx}.word${idx + 21}`}
+                                    render={({ field: { value, onChange } }) => (
+                                        <AudioButton
+                                            selectedValue={value}
+                                            onButtonClick={onChange}
+                                            key={idx}
+                                            audioSrc={`${pageData.audiofiles[20 + idx]}`}
+                                            title={`Word ${idx + 21}`} />
+                                    )}
+                                />
+                            )
+                        })}</Flex>
                 </Box>
 
                 <Box position='absolute' right='16' pt={8} pb={4}>
@@ -100,7 +155,7 @@ export default function Quiz({ pageData }) {
                         color='#F5E3E3'
                         backgroundColor='#5151D2'
                         onClick={(e) => {
-                            push(`/${currLang}/section-2/`)
+                            handleClick();
                         }}
                     >
                         Submit

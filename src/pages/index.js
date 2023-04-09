@@ -8,6 +8,7 @@ import {
 import { Select } from 'antd';
 import { Elsie } from 'next/font/google';
 import { useRouter } from 'next/router';
+import localforage from 'localforage';
 
 const elsie = Elsie({ weight: '400', subsets: ['latin'] });
 
@@ -15,6 +16,9 @@ export default function Home() {
   const {push} = useRouter();
 
   function handleSelect(e){
+    localforage.clear().then(() => {
+      console.log('database cleared!')
+    })
     console.log(e);
     push(`/${e}/hello`);
 

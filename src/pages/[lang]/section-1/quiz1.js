@@ -17,6 +17,7 @@ import AudioButton from '@/components/AudioButton';
 import { useRouter } from 'next/router';
 
 import { Controller, useForm, useFieldArray } from 'react-hook-form';
+import localforage from 'localforage';
 
 import { BsFillSquareFill } from 'react-icons/bs'
 const elsie = Elsie({ weight: '900', subsets: ['latin'] });
@@ -30,9 +31,10 @@ export default function Quiz({ pageData }) {
     const red = ['#D8695B', 'red'];
     const yellow = ['#D8A85B', 'yellow'];
 
-    const toast = useToast();
+    
     const rect = <Icon as={BsFillSquareFill} w={6} h={6} />;
 
+    const toast = useToast();
     const {
         handleSubmit,
         register,
@@ -49,7 +51,8 @@ export default function Quiz({ pageData }) {
         const values = getValues().quiz1form1;
         //console.log(JSON.stringify(values, null, 2))
 
-        if(values.filter(value => Object.values(value).includes(undefined)).length != 0){
+        //TODO: Change ! to !!
+        if(!values.filter(value => Object.values(value).includes(undefined)).length != 0){
             toast({
                 title: "Form Incomplete",
                 description: "Please fill out the whole form to continue",
@@ -60,11 +63,12 @@ export default function Quiz({ pageData }) {
             return;
         }
 
-        //TODO: Add push to db function here
-        push(`/${currLang}/section-1/quiz2`);
-
-
-
+        localforage.setItem("section1quiz1", values, () => {
+            console.log("done upload section1 quiz1");
+            push(`/${currLang}/section-1/quiz2`);
+            //localforage.getItem("section1quiz1", (err, val) => console.log(val));
+        })
+        //push(`/${currLang}/section-1/quiz2`);
     }
 
     return (

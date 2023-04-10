@@ -130,7 +130,7 @@ export default function Quiz({ pageData }) {
                         flexWrap={'wrap'}
                         flexBasis={'100%'}>
 
-                        {[...Array(20)].map((el, idx) => {
+                        {[...Array(22)].map((el, idx) => {
                             return (
                                 <Controller
                                     key={idx}

@@ -142,7 +142,7 @@ export default function Quiz({ pageData }) {
                                             selectedValue={value}
                                             onButtonClick={onChange}
                                             key={idx}
-                                            audioSrc={`gsgsg${pageData.audiofiles[idx]}`}
+                                            audioSrc={`${pageData.audiofiles[idx]}`}
                                             title={`Word ${idx + 1}`} />
                                     )}
                                 />

@@ -8,7 +8,8 @@ import {
     Flex,
     Select,
     Textarea,
-    Button
+    Button,
+    IconButton
 } from '@chakra-ui/react';
 import data from '@/data/intro.json'
 import { Elsie, Poppins } from 'next/font/google';
@@ -16,6 +17,7 @@ import { RxSpeakerLoud } from 'react-icons/rx';
 import { useRouter } from 'next/router';
 import { useForm, useFieldArray } from 'react-hook-form';
 import localforage from 'localforage';
+import { Howl } from 'howler';
 
 const elsie = Elsie({ weight: '400', subsets: ['latin'] });
 const poppins = Poppins({ weight: '400', subsets: ['latin'] });
@@ -25,6 +27,8 @@ const poppins = Poppins({ weight: '400', subsets: ['latin'] });
 export default function IntroForm({ pageData }) {
     const { push, query } = useRouter();
     const currLang = query.lang;
+
+    const [loading, setLoading] = useState(true);
     const {
         handleSubmit,
         register,
@@ -33,35 +37,83 @@ export default function IntroForm({ pageData }) {
         control
     } = useForm();
 
+    const sound = new Howl({
+        src: ['https://s3.tebi.io/surveydata/Trial_Slide4_Audioclip.wav'],
+        autoplay: false,
+        onend: () => {
+            console.log('finished playing intro');
+        },
+        html5: true,
+        onload: () => setLoading(false)
+    });
+
     const { fields, append, prepend, remove, swap, move, insert } = useFieldArray({
         control,
         name: "introform", // unique name for your Field Array
-      });
+    });
 
     useEffect(() => {
         console.log(pageData.forms[0])
     }, [])
 
-    function handleClick(){
+    function handleClick() {
         const values = getValues().introform;
         console.log(values)
         localforage.setItem("introform", values).then(() => {
             console.log('done upload')
             push(`/${currLang}/add-form`);
         });
-        
+
+    }
+
+    function AudioComp() {
+        if (currLang === 'en') {
+            return (
+                <>
+                    <Text fontFamily={poppins.style.fontFamily} fontSize={'xl'} py={1} color='#5151D2'>Click on
+                        <IconButton
+                            size='sm'
+                            mx={2}
+                            colorScheme='facebook'
+                            onClick={(e) => { sound.play() }}
+                            variant='solid'
+                            icon={<RxSpeakerLoud />} 
+                            isLoading={loading}
+                            />
+
+                        and listen to the audio clip</Text>
+                </>
+            )
+        }
+        else {
+            return (
+                <>
+                    <Text fontFamily={poppins.style.fontFamily} fontSize={'xl'} py={1} color='#5151D2'>এই
+                        <IconButton
+                            mx={2}
+                            colorScheme='facebook'
+                            onClick={(e) => { sound.play() }}
+                            variant='solid'
+                            size='sm'
+                            icon={<RxSpeakerLoud />}
+                            isLoading={loading}
+                            />
+                        চিহ্নে চাপ দিয়ে একজন বক্তার বলে যাওয়া কয়েকটি বাক্য শুনুন</Text>
+                </>
+            )
+        }
     }
 
     return (
         <>
             <Box height={'100vh'} mx={32} py={8}>
-                {pageData.paras.map((el, idx) => {
-                    return (
-                        <Text fontFamily={poppins.style.fontFamily} fontSize={'xl'} key={idx} py={1} color='#5151D2'>
-                            {el}
-                        </Text>
-                    )
-                })}
+                <Text fontFamily={poppins.style.fontFamily} fontSize={'xl'} py={1} color='#5151D2'>
+                    {pageData.paras[0]}
+                </Text>
+                {<AudioComp />}
+                <Text fontFamily={poppins.style.fontFamily} fontSize={'xl'} py={1} color='#5151D2'>
+                    {pageData.paras[1]}
+                </Text>
 
                 <Box mr='5%' pt={16}>
                     {pageData.forms.map((el, idx) => {
@@ -76,7 +128,7 @@ export default function IntroForm({ pageData }) {
                                     {el.question}
                                 </Text>
                                 <Box >
-                                    <Select  {...register(`introform.${idx}.value`)} 
+                                    <Select  {...register(`introform.${idx}.value`)}
                                         variant='filled' width='250px' placeholder="Select option">
                                         {el.options.map((opt, idx) => {
                                             return (

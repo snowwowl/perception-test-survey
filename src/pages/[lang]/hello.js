@@ -49,11 +49,11 @@ export default function Hello({ pageData }) {
                 <AlertDialogContent backgroundColor='#5151D2' color='#F5E3E3'>
                     <AlertDialogCloseButton />
                     <AlertDialogBody paddingTop={8} fontSize='xl'>
-                        Do you speak urban Bangla or a regional dialect at home?
+                        {pageData.modaltext}
                     </AlertDialogBody>
                     <AlertDialogFooter justifyContent={'center'}>
-                        <Button onClick={(e) => {push(`/${currLang}/hi`)}} size='lg' rounded={32} variant='outline' borderColor='#5151D2' color='#5151D2' backgroundColor='#F5E3E3'>Yes, I do.</Button>
-                        <Button mx={4} size='lg' onClick={(e) => {push(`/bye`)}} rounded={32} variant='outline' borderWidth={2} borderColor='#F5E3E3' backgroundColor='#5151D2' color='#F5E3E3'>No, I don't.</Button>
+                        <Button onClick={(e) => {push(`/${currLang}/hi`)}} size='lg' rounded={32} variant='outline' borderColor='#5151D2' color='#5151D2' backgroundColor='#F5E3E3'>{currLang === 'en' ? "Yes, I do." :" হ্যাঁ"}</Button>
+                        <Button mx={4} size='lg' onClick={(e) => {push(`/bye`)}} rounded={32} variant='outline' borderWidth={2} borderColor='#F5E3E3' backgroundColor='#5151D2' color='#F5E3E3'>{currLang === 'en' ? "No, I don't." : " না"}</Button>
                     </AlertDialogFooter>
                 </AlertDialogContent>
             </AlertDialog>

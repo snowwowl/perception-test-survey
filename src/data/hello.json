@@ -3,13 +3,15 @@
         "greeting": "Hello!",
         "paras": ["Have you ever received a call from a long-lost friend and surprised yourself by recognising them simply from their 'hello!' over the phone?", "Have you ever wondered how the human brain recognises thousands of individual voices, many similar to each other, with very little effort and at lightning speed?", "Have you ever paid attention to the volume of information your brain collects when you talk to a stranger, simply from their voice?", "If you're a native speaker of Bangla and you’re between 18-60 years old, I request you to attempt this fun exercise.", "Note: You must also be able to read and speak Bangla fluently."],
         "button1": "No, I want to exit.",
-        "button2": "Yes, I want to continue."
+        "button2": "Yes, I want to continue.",
+        "modaltext": "Do you speak urban Bangla or a regional dialect at home?"
     },
 
     "bn": {
         "greeting": "হ্যালো!",
         "paras": ["এমনকি কখনো হয়েছে  যে ফোনে শুধু একটিবার ‘হ্যালো’ শুনেই আপনি ধরে ফেলেছেন, এ আর কেউ নয়, আপনার হারিয়ে যাওয়া ছোটোবেলার বন্ধুটি!", "কখনো কি ভেবে আশ্চর্য হয়েছেন, কিভাবে হাজারো মানুষের গলার আওয়াজ তার নিজস্বতা নিয়ে জমা থাকে আমাদের মস্তিষ্কে !  কিভাবে এক লহমায় আমরা অনায়াসে চিনে ফেলি ভীড়ের মধ্যে বিশেষ একজনকে! চোখে না দেখে, শুধুমাত্র একটিবার তার ডাক শুনে!", "হয়তো আমরা ধারনাই করতে পারিনা, নতুন একজন মানুষের সাথে কথা বলার সময়ই, শুধুমাত্র সেই ব্যক্তির গলার আওয়াজ শুনেই তার সম্পর্কে কতো তথ্য জমা হয়ে যায় আমাদের মাথায় ! ঠিক এই অজানা বিষয়টি নিয়েই আমার বর্ত্তমান গবেষণা।", "আপনার মাতৃভাষা যদি বাংলা হয়,  আপনি যদি বাংলাভাষা পড়তে এবং বলতে পারেন এবং আপনার বয়স যদি ১৮ থেকে ৭০ বছরের মধ্যে হয়ে থাকে, তাহলে আমি আপনাকে অনুরোধ করবো আমার গবেষণার কাজে একটি অমূল্য সাহায্য করতে।"],
         "button1": "No, I want to exit.",
-        "button2": "হ্যাঁ, আমি আগ্রহী"
+        "button2": "হ্যাঁ, আমি আগ্রহী",
+        "modaltext": "বাংলা কি আপনার মাতৃভাষা?"
     }
 }

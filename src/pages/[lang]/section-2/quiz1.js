@@ -41,11 +41,22 @@ export default function Quiz({ pageData }) {
         name: "quiz2form1", // unique name for your Field Array
     });
 
+    
+
     function handleClick() {
 
         const values = getValues().quiz2form1;
         //console.log(JSON.stringify(values, null, 2));
-
+        if(values.filter(value => Object.values(value).includes(undefined)).length != 0){
+            toast({
+                title: "Form Incomplete",
+                description: "Please fill out the whole form to continue",
+                status: 'warning',
+                duration: 5000,
+                isClosable: true
+            });
+            return;
+        }
         localforage.setItem("section2quiz1", values, () => {
             localforage.getItem("section2quiz1", (err, val) => console.log(val));
             push(`/${currLang}/section-2/quiz2`)
@@ -108,6 +119,7 @@ export default function Quiz({ pageData }) {
                 </Box>
 
                 <Flex position='relative' paddingTop='10%' pb={4} justifyContent='flex-end'>
+                    
                     <Button
                         _hover={{ color: 'black' }}
                         size='lg'

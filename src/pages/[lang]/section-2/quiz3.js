@@ -47,6 +47,16 @@ export default function Quiz({ pageData }) {
         
         
         values.splice(0, 20);
+        if(values.filter(value => Object.values(value).includes(undefined)).length != 0){
+            toast({
+                title: "Form Incomplete",
+                description: "Please fill out the whole form to continue",
+                status: 'warning',
+                duration: 5000,
+                isClosable: true
+            });
+            return;
+        }
         localforage.setItem("section2quiz3", values, () => {
             localforage.getItem("section2quiz3", (err, val) => console.log(val));
             push(`/${currLang}/section-2/quiz4`);

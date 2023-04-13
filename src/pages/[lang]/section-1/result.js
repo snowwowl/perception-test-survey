@@ -10,25 +10,42 @@ import {
     Textarea,
     Button
 } from '@chakra-ui/react';
-import data from '@/data/intro.json'
+
 import { Elsie, Poppins } from 'next/font/google';
 import { PieChart } from 'react-minimal-pie-chart';
 import { useRouter } from 'next/router';
+import ResultsChart from '@/components/ResultsChart';
 
+import data from '@/data/answers.json';
+import localforage from 'localforage';
 
 const elsie = Elsie({ weight: '400', subsets: ['latin'] });
 const poppins = Poppins({ weight: '400', subsets: ['latin'] });
 
-const dataMock = [
-    { title: 'Incorrect', value: 10, fontcolor: '#D27351', color: '#EFA78D' },
-    { title: 'Correct', value: 90, fontcolor: '#5151D2', color: '#9797EF' }
-]
-const shiftSize = 1;
-//label={({ dataEntry }) => dataEntry.value + "% " + dataEntry.title}
-
-export default function IntroResult() {
+export default function Result() {
     const { push, query } = useRouter();
     const currLang = query.lang;
+
+    useEffect(() => {
+        (async () => {
+            const answers = data.quiz1;
+            const q1 = await localforage.getItem("section1quiz1");
+            const q2 = await localforage.getItem("section1quiz2");
+
+            const sec1 = q1.concat(q2);
+            let correct = 0;
+
+            sec1.map((el, idx) => {
+                if(el[`word${idx+1}`] == answers[idx]) correct++;
+            })
+            console.log(correct)
+        })();
+        return () => {
+            // this now gets called when the component unmounts
+        };
+        // q1.map((el) => console.log(el));
+    }, [])
+
     return (
         <>
             <Box height='100vh'>
@@ -36,28 +53,14 @@ export default function IntroResult() {
                     pt={8}
                     justifyContent='center'
                     alignItems='center'
-                    
+
                 >
                     <Text fontFamily={elsie.style.fontFamily} color='white' fontWeight={'bold'} fontSize={'8xl'}>Result..</Text>
                 </Flex>
-                
-                <PieChart
-                    data={dataMock}
-                    radius={40 - shiftSize}
-                    segmentsShift={(index) => (index === 0 ? shiftSize : 0.5)}
-                    label={({ dataEntry }) => dataEntry.value + "% " + dataEntry.title}
-                    labelPosition={125}
-                    labelStyle={(index) => ({
-                        fill: dataMock[index].fontcolor,
-                        stroke: dataMock[index].fontcolor,
-                        strokeWidth: '0.1px',
-                        fontSize: '5px',
-                        backgroundColor: '#9797EF',
-                        fontFamily: poppins.style.fontFamily,
-                    })}
-                    animate
-                />
-                
+
+                {/* Add chart here */}
+                <ResultsChart correct={25} incorrect={75} />
+
                 <Flex justifyContent='center' alignItems='center' pt={8} pb={4}>
                     <Button
                         _hover={{ color: 'black' }}
@@ -67,7 +70,7 @@ export default function IntroResult() {
                         color='#F5E3E3'
                         backgroundColor='#5151D2'
                         onClick={(e) => {
-                            push(`/${currLang}/section-1/`)
+                            push(`/${currLang}/section-2/`)
                         }}
                     >
                         Continue

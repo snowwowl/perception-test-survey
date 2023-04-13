@@ -9,7 +9,8 @@ import {
     Select,
     Divider,
     Button,
-    Input
+    Input,
+    useToast
 } from '@chakra-ui/react';
 import { useForm, useFieldArray } from 'react-hook-form'
 import data from '@/data/add-form.json'
@@ -24,6 +25,8 @@ export default function AddForm({ pageData }) {
     const { push, query } = useRouter();
     const currLang = query.lang;
 
+
+    const toast = useToast();
     const {
         handleSubmit,
         register,
@@ -40,6 +43,19 @@ export default function AddForm({ pageData }) {
 
     function handleClick(){
         const values = getValues().addform;
+
+        if(values.filter(value => Object.values(value).includes('')).length != 0){
+            toast({
+                title: "Form Incomplete",
+                description: "Please fill out the whole form to continue",
+                status: 'warning',
+                duration: 5000,
+                isClosable: true
+            });
+            return;
+        }
+
+        console.log(values);
         localforage.setItem("addform", values).then(() => {
             console.log('done upload add-form');
             push(`/${currLang}/section-1/`);

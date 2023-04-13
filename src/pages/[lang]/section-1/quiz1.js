@@ -52,7 +52,7 @@ export default function Quiz({ pageData }) {
         //console.log(JSON.stringify(values, null, 2))
 
         //TODO: Change ! to !!
-        if(!values.filter(value => Object.values(value).includes(undefined)).length != 0){
+        if(values.filter(value => Object.values(value).includes(undefined)).length != 0){
             toast({
                 title: "Form Incomplete",
                 description: "Please fill out the whole form to continue",

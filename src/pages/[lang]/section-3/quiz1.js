@@ -48,7 +48,7 @@ export default function Quiz({ pageData }) {
         const values = getValues().quiz3form1;
         // console.log(JSON.stringify(values, null, 2))
 
-        //TODO: Change ! to !!
+        
         if (values.filter(value => Object.values(value).includes(undefined)).length != 0) {
             toast({
                 title: "Form Incomplete!",

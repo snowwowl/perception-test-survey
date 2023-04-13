@@ -64,10 +64,11 @@ export default function AudioButton(props) {
                     fontSize="lg" 
                     padding={8} 
                     rightIcon={<RxSpeakerLoud />} 
-                    _hover={{ backgroundColor: "#5151D2" }} 
-                    backgroundColor="#9797EF" 
-                    color="#F5E3E3" 
-                    variant='solid'
+                    _hover={{ backgroundColor: "#9797EF" }} 
+                    backgroundColor={selected ? "#9797EF" : "#F5E3E3"} 
+                    color={selected ? "white" : "#5151D2"}
+                    borderColor='#5151D2'
+                    variant='outline'
                     onClick={(e) => {
                         sound.play();
                     }}

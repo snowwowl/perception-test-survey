@@ -59,7 +59,7 @@ export default function Quiz({ pageData }) {
         }
         localforage.setItem("section2quiz4", values, () => {
             localforage.getItem("section2quiz4", (err, val) => console.log(val));
-            push(`/${currLang}/section-3/`);
+            push(`/${currLang}/section-2/prompt`);
         })
     }
 

@@ -50,7 +50,7 @@ export default function TestComplete() {
                             backgroundColor='#5151D2'
                             w='60%'
                             onClick={(e) => {
-                                push(`/${currLang}/final-form`)
+                                push(`/${currLang}/section-3/result`)
                             }}
                         >
                             Yes, let's go!

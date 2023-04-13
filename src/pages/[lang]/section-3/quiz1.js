@@ -65,7 +65,7 @@ export default function Quiz({ pageData }) {
             console.log("FINISH!");
 
             localforage.getItem("quiz3form1", (err, val) => console.log(val));
-            push(`/${currLang}/test-complete`)
+            push(`/${currLang}/section-3/prompt`)
         })
         
         //TODO: Add finish page/form here

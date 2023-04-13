@@ -29,15 +29,18 @@ export default function Result() {
 
     useEffect(() => {
         (async () => {
-            const answers = data.quiz1;
-            const q1 = await localforage.getItem("section1quiz1");
-            const q2 = await localforage.getItem("section1quiz2");
+            const answers = data.quiz2;
+            const q1 = await localforage.getItem("section2quiz1");
+            const q2 = await localforage.getItem("section2quiz2");
+            const q3 = await localforage.getItem("section2quiz3");
+            const q4 = await localforage.getItem("section2quiz4");
 
-            const sec1 = q1.concat(q2);
+            const sec2 = q1.concat(q2, q3, q4);
+            console.log(sec2);
             let correct = 0;
 
-            sec1.map((el, idx) => {
-                if(el[`word${idx+1}`] == answers[idx]) correct++;
+            sec2.map((el, idx) => {
+                if(el[`sent${idx+1}`] == answers[idx]) correct++;
             })
             console.log(correct);
             setCorrect(correct);
@@ -72,7 +75,7 @@ export default function Result() {
                         color='#F5E3E3'
                         backgroundColor='#5151D2'
                         onClick={(e) => {
-                            push(`/${currLang}/section-2/`)
+                            push(`/${currLang}/section-3/`)
                         }}
                     >
                         Continue

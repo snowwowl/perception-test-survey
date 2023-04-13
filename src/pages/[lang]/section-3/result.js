@@ -29,16 +29,15 @@ export default function Result() {
 
     useEffect(() => {
         (async () => {
-            const answers = data.quiz1;
-            const q1 = await localforage.getItem("section1quiz1");
-            const q2 = await localforage.getItem("section1quiz2");
-
-            const sec1 = q1.concat(q2);
+            const answers = data.quiz3;
+            
+            const sec3 = await localforage.getItem("quiz3form1")
             let correct = 0;
 
-            sec1.map((el, idx) => {
-                if(el[`word${idx+1}`] == answers[idx]) correct++;
+            sec3.map((el, idx) => {
+                if(el[`clip${idx+1}`] == answers[idx]) correct++;
             })
+            
             console.log(correct);
             setCorrect(correct);
         })();
@@ -61,7 +60,7 @@ export default function Result() {
                 </Flex>
 
                 {/* Add chart here */}
-                <ResultsChart correct={correct} incorrect={40 - correct} />
+                <ResultsChart correct={correct} incorrect={102 - correct} />
 
                 <Flex justifyContent='center' alignItems='center' pt={8} pb={4}>
                     <Button
@@ -72,7 +71,7 @@ export default function Result() {
                         color='#F5E3E3'
                         backgroundColor='#5151D2'
                         onClick={(e) => {
-                            push(`/${currLang}/section-2/`)
+                            push(`/${currLang}/final-form/`)
                         }}
                     >
                         Continue

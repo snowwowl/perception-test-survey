@@ -27,8 +27,12 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env
 
 # vercel
 .vercel
 
-.vercel
+# audio files
+/src/data/section1
+/src/data/section2
+/src/data/section3

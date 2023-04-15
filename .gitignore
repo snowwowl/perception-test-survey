@@ -31,7 +31,4 @@ yarn-error.log*
 # vercel
 .vercel
 
-# audio files
-/src/data/section1
-/src/data/section2
-/src/data/section3
+.vercel

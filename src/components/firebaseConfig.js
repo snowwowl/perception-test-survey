@@ -6,12 +6,12 @@ import { getFirestore } from 'firebase/firestore';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBlJloQYdVjxGlEynIQZyqQ4V5NlquHpfg",
+  apiKey: process.env.API_KEY,
   authDomain: "surveytwo-9c0f3.firebaseapp.com",
   projectId: "surveytwo-9c0f3",
   storageBucket: "surveytwo-9c0f3.appspot.com",
-  messagingSenderId: "739373687990",
-  appId: "1:739373687990:web:8ff2df4bc296e9d9daf217"
+  messagingSenderId: process.env.MESSG_ID,
+  appId: process.env.APP_ID
 };
 
 // Initialize Firebase

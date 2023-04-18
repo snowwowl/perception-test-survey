@@ -33,14 +33,22 @@ export default function Home() {
               textAlign='center'
               fontSize='20em'
               fontFamily={elsie.style.fontFamily}
+
             >
               Bye!
 
             </Heading>
-            <Text fontFamily={poppins.style.fontFamily} fontSize={'xl'} color='#F5E3E3'>Thanks a ton for taking the time to do this test!! Your contribution is very valuable for my work.</Text>
-            <Box py={4} justifyItems={'center'} maxW={'60%'}>
-              <Button style={{ backgroundColor: '#F5E3E3', fontWeight: 500, color: '#5151D2' }} size='large' shape='round'>Exit the test.</Button>
-            </Box>
+            <Text fontFamily={poppins.style.fontFamily} fontSize={'2xl'} color='#F5E3E3'>Thanks a ton for taking the time to do this test!! Your contribution is very valuable for my work.</Text>
+            <Stack spacing={4} direction='column' pt={40} justifyItems={'center'} maxW={'60%'}>
+              <Box textAlign='center'>
+                <Text fontFamily={poppins.style.fontFamily} fontSize={'md'} color='#F5E3E3'>** If your overall score is 100% correct, you will be contacted on the email ID you provided at the beginning of the test. You will be asked for a mailing address to which the gift can be couriered.</Text>
+              </Box>
+              <Box
+                textAlign='center'
+                maxW='100%'>
+                <Button style={{ backgroundColor: '#F5E3E3', fontWeight: 500, color: '#5151D2' }} size='large' shape='round'>Exit the test.</Button>
+              </Box>
+            </Stack>
 
           </Stack>
 

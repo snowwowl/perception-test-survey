@@ -28,7 +28,7 @@ export default function Prompt() {
             >
                 <Center w='100%' h='100%'>
                     <Stack justifyContent='center' alignItems='center' direction='column'>
-                        <Text fontSize='2xl'> This completes the first section of the test. </Text>
+                        <Text fontSize='2xl'> This completes the third section of the test. </Text>
                         <Text fontSize='2xl'> Ready to see your score?</Text>
                         <Stack py={4} direction='row' spacing={4}>
                             <Button
@@ -41,7 +41,7 @@ export default function Prompt() {
                                     backgroundColor: 'blackAlpha.400'
                                 }}
                                 onClick={(e) => {
-                                    push(`/${currLang}/section-1/result`)
+                                    push(`/${currLang}/section-3/result`)
                                 }}
                             >
                                 Yes, let's go!
@@ -57,7 +57,7 @@ export default function Prompt() {
                                 width='240px'
                                 whiteSpace='initial'
                                 onClick={(e) => {
-                                    push(`/${currLang}/section-2/`)
+                                    push(`/${currLang}/final-form/`)
                                 }}
                             >
                                 No, I’ll check my overall score later!

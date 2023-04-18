@@ -11,6 +11,7 @@ export default function Document() {
           content="width=device-width, initial-scale=1.0"
         />
         <title>Perception Test</title>
+        <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
       <body style={{ backgroundColor: '#F5E3E3' }}>
         <Main />

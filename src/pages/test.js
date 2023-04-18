@@ -16,7 +16,7 @@ export default function Test(){
             <Button onClick={(e) => {
                 addDoc(dbInstance, {
                     noteTitle: "HELLO"
-                });
+                }).then((val) => console.log(val));
             }}>Click</Button>
         
         </>

@@ -86,7 +86,8 @@ export default function Quiz({ pageData }) {
                                             <Sentence
                                                 onChange={onChange}
                                                 url={`${pageData.audiofiles[el - 1]}`}
-                                                idx={el} />
+                                                idx={el}
+                                                lang={currLang}/>
                                         )}
                                     />
 
@@ -104,7 +105,8 @@ export default function Quiz({ pageData }) {
                                             <Sentence
                                                 onChange={onChange}
                                                 url={`${pageData.audiofiles[el - 1]}`}
-                                                idx={el} />
+                                                idx={el}
+                                                lang={currLang} />
                                         )}
                                     />
 

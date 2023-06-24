@@ -9,7 +9,9 @@ import {
     Select,
     Textarea,
     Button,
-    IconButton
+    IconButton,
+    OrderedList,
+    ListItem
 } from '@chakra-ui/react';
 import data from '@/data/intro.json'
 import { Elsie, Poppins } from 'next/font/google';
@@ -77,9 +79,9 @@ export default function IntroForm({ pageData }) {
                             colorScheme='facebook'
                             onClick={(e) => { sound.play() }}
                             variant='solid'
-                            icon={<RxSpeakerLoud />} 
+                            icon={<RxSpeakerLoud />}
                             isLoading={loading}
-                            />
+                        />
 
                         and listen to the audio clip</Text>
                 </>
@@ -97,7 +99,7 @@ export default function IntroForm({ pageData }) {
                             size='sm'
                             icon={<RxSpeakerLoud />}
                             isLoading={loading}
-                            />
+                        />
                         চিহ্নে চাপ দিয়ে একজন বক্তার বলে যাওয়া কয়েকটি বাক্য শুনুন</Text>
                 </>
             )
@@ -153,19 +155,17 @@ export default function IntroForm({ pageData }) {
                         <Textarea {...register(`introform.${4}.value`)} variant={'filled'} width='300px' placeholder={pageData.form2[1]} />
                     </Flex>
 
-                    <Flex py={16} justifyContent='space-between'>
-                        <Text
-                            fontFamily={poppins.style.fontFamily}
-                            fontSize={'lg'}
-                            py={1}
-                            color='#5151D2'
-                        >
-                            {pageData.form3[0]}
-                        </Text>
+                    <Flex py={16} justifyContent='right'>
                         <Button onClick={(e) => { handleClick() }} px={12} _hover={{ color: 'black' }} size='lg' rounded={32} variant='solid' color='#F5E3E3' backgroundColor='#5151D2'>{pageData.form3[1]}</Button>
                         {/* <Button onClick={(e) => {
                             localforage.getItem("introform", (err, value) => console.log(value));
                         }}>debug</Button> */}
+                    </Flex>
+
+                    <Flex py={16} justifyContent='left'>
+                        <OrderedList color="#5151D2" fontSize='sm'>
+                            {pageData.footer.map((el, idx) => <ListItem key={idx}>{el}</ListItem>)}
+                        </OrderedList>
                     </Flex>
                 </Box>
             </Box>

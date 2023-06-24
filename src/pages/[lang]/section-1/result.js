@@ -51,14 +51,16 @@ export default function Result() {
     return (
         <>
             <Box height='100vh'>
-                <Flex
+            <Stack
                     pt={8}
                     justifyContent='center'
                     alignItems='center'
-
+                    direction='column'
+                    spacing={1}
                 >
                     <Text fontFamily={elsie.style.fontFamily} color='white' fontWeight={'bold'} fontSize={'8xl'}>Result..</Text>
-                </Flex>
+                    <Text fontFamily={poppins.style.fontFamily} color='#5151D2' fontWeight='bold' fontSize={'md'}>Section-1</Text>
+                </Stack>
 
                 {/* Add chart here */}
                 <ResultsChart correct={correct} incorrect={40 - correct} />

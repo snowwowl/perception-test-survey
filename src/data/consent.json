@@ -1,0 +1,23 @@
+{
+    "en": {
+        "title": "Consent Statement",
+        "paras": [
+            "Please note that:",
+            "1. The test results will strictly be used for the purpose of the aforementioned academic study by the researcher.",
+            "2. Anonymity of the contributors and privacy of the test will be ensured by the researcher."
+        ],
+        "q1": "I understand points 1 and 2 mentioned above and agree to attempt this perception test.",
+        "yes": "Yes, let's continue.",
+        "no": "No, I want to exit."
+    },
+    "bn": {
+        "title": "বিধিসম্মত অনুমতি প্রার্থনা",
+        "paras": [
+            "১. পরীক্ষার ফলাফল কেবলমাত্র গবেষিকার বর্তমান গবেষণার উদ্দেশ্যেই ব্যবহার করা হবে।",
+            "২. অংশগ্রহণকারীদের পরিচিতি গোপন রাখার সম্পূর্ন দায়িত্ব পালন করতে  গবেষিকা বাধ্য থাকবেন।"
+        ],
+        "q1": "ওপরের ১ ও ২ নং লাইনে যা যা বলা আছে তা বুঝেছি এবং এই listening test এ অংশগ্রহণে সন্মতি দিচ্ছি।",
+        "yes": "হ্যাঁ, সন্মতি দিলাম।",
+        "no": "না।"
+    }
+}

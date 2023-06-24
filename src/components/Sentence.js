@@ -12,7 +12,7 @@ import {Howl} from 'howler';
 
 const poppins = Poppins({ weight: '400', subsets: ['latin'] });
 
-export default function Sentence({url, idx, onChange}) {
+export default function Sentence({url, idx, onChange, lang}) {
     const [loading, setLoading] = useState(true);
     const sound = new Howl({
         src: [url],
@@ -45,13 +45,13 @@ export default function Sentence({url, idx, onChange}) {
                 }}
                 isLoading={loading}
             >
-                Sentence {idx}
+                {lang == 'en' ? "Sentence" : "বাক্য"} {idx}
             </Button>
                 {/* <IconButton pb={2} fontSize='20px' color='blue' variant={'outline'} aria-label='Search database' icon={<MdOutlineAudiotrack />} /> */}
-                <Select maxW="full" variant='filled' onChange={(e) => handleChange(e.target.value)}  placeholder="Select option">
-                    <option>Urban Bengali Speaker (India)</option>
-                    <option>Urban Bengali Speaker (Bangladesh)</option>
-                    <option>Non-native Bengali Speaker</option>
+                <Select maxW="full" variant='filled' onChange={(e) => handleChange(e.target.value)}  placeholder={lang == 'en' ? "Select option" : "বক্তার সঠিক শ্রেণী বাছুন"}>
+                    <option>{lang == 'en' ? "Urban Bengali Speaker (India)" : "ভারতীয়, শহুরে বাঙালী"}</option>
+                    <option>{lang == 'en' ? "Urban Bengali Speaker (Bangladesh)" : "বাংলাদেশীয়, শহুরে বাঙালী"}</option>
+                    <option>{lang == 'en' ? "Non-native Bengali Speaker" : "অবাঙালী"}</option>
                 </Select>
             </Stack>
         </>

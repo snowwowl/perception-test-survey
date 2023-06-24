@@ -1,0 +1,18 @@
+{
+    "en": {
+        "title": "While your result is being prepared, please answer the following questions.",
+        "q1": "What helped you make your choices?",
+        "q2": "What speech features prompted you to choose the 'Bangali (from West Bengal)' category?",
+        "q3": "What speech features prompted you to choose the 'Bangali (from Bangladesh)' category?",
+        "q4": "What speech features prompted you to choose the 'Non-Bengali' category?",
+        "placeholder": "Add your answer here..."
+    },
+    "bn": {
+        "title": "ফলাফল অল্পক্ষণের মধ্যেই ঘোষণা করা হচ্ছে।। ইতিমধ্যে নীচে দেওয়া প্রশ্নগুলোর উত্তর দেবার জন্য অনুরোধ করছি।",
+        "q1": "কিভাবে আপনি উত্তর খুঁজে নিলেন?",
+        "q2": "পশ্চিমবঙ্গীয় শহুরে বাঙালীর কথাবার্তায় কি কোনো বৈশিষ্ঠ্য লক্ষ্য করলেন যার ভিত্তিতে তাঁদেরকে অন্যান্যদের থেকে আলাদা করা যাচ্ছে?",
+        "q3": "কথাবার্তার মধ্যে কি কোনোরকম বিশেষত্ব পেলেন যাতে চেনা যায় বক্তা বাংলাদেশীয় বাঙালী?",
+        "q4": "যাঁদের মাতৃভাষা বাংলা নয় বলে আপনার মনে হয়েছে, তাঁদের কথাবার্তায় কি এমন কিছু ছিলো যেটা তাঁদের সহজেই চিনিয়ে দিয়েছে?",
+        "placeholder": "উত্তর এখানে লিখুন…"
+    }
+}

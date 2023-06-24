@@ -26,15 +26,15 @@
                 "question": "3. Is the person speaking in 'Pramit Bangla' or in 'Ancholik Upabhasha'?",
                 "options": [
                     "Pramit Bangla",
-                    "Ancholik Upabhasha"
+                    "Ancholik Upobhasha"
                 ]
             },
             {
                 "question": "4. How would you categorise the linguistic/geographical background of the person?",
                 "options": [
-                    "Bengali from West Bengal",
-                    "Bengali from Bangladesh",
-                    "Aw-Bengali"
+                    "Bangali from West Bengal",
+                    "Bangali from Bangladesh",
+                    "Aw-bangali"
                 ]
             }
         ],
@@ -45,6 +45,11 @@
         "form3": [
             "Click Next to check if your answers are correct.",
             "Next"
+        ],
+        "footer": [
+            "pramit bangla - It is the urban dialect spoken in majority by the people of cities and towns in West Bengal. This can be loosely considered as a spoken version of the informal language used in print. In Bangladesh, it is mostly used in very formal settings, in education and in media.",
+            "ancholik upobhasha - regional dialects",
+            "linguistic/geographical background - Bangla is spoken widely across India and Bangladesh. But each geographical locale has its specific features and characteristics of speech in Bangla. When we hear someone speak in Bangla, these speech characteristics help us identify where the person is from."
         ]
     },
     "bn": {
@@ -74,14 +79,14 @@
                 "question": "3. ব্যাক্তিটি কি শহুরে/প্রমিত বাংলায় কথা বলেন, নাকি আঞ্চলিক উপভাষায় কথা বলেন’?",
                 "options": [
                     "প্রমিত বাংলা",
-                    "আঁচলিক উপভাষা"
+                    "আঞ্চলিক উপভাষা"
                 ]
             },
             {
                 "question": "4. ভাষাগত/অঞ্চলগত ভাবে ব্যাক্তিটিকে কোন শ্রেণীভুক্ত করা যায়?",
                 "options": [
-                    "পশ্চিমবঙ্গ থেকে বাংলা",
-                    "বাংলাদেশ থেকে বাঙালি",
+                    "পশ্চিমবঙ্গের বাঙালি",
+                    "বাংলাদেশের বাঙালি",
                     "অবাঙালি"
                 ]
             }
@@ -93,6 +98,9 @@
         "form3": [
             "Click Next to check if your answers are correct.",
             "পরবর্ত্তী"
+        ],
+        "footer": [
+            "প্রমিত বাংলা - এটি শহুরে বাংলা, যে ভাষায় পশ্চিমবাংলার শহরাঞ্চলের বেশীরভাগ লোকজন কথা বলে থাকেন।এটি আদতে আটপৌরে লিখিত বাংলাভাষারই কথ্যরূপ। বাংলাদেশে এটি যথেষ্টই বিধিবদ্ধভাবে শিক্ষা-শিক্ষণে এবং সংবাদমাধ্যমে ব্যবহার করা হয়।"
         ]
     }
 }

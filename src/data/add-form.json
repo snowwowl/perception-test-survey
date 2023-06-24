@@ -9,6 +9,7 @@
 
         "quiz2": [
             ["What is your sex assigned at birth?", "Sex"],
+            ["What is your place of residence? (India/Bangladesh)", "Place of residence"],
             ["For how many years have you resided in West Bengal/Bangladesh?", "00 yrs"],
             ["Your highest educational qualification?", "Qualification"]
         ],
@@ -24,6 +25,7 @@
 
         "quiz2": [
             ["জন্মসময়ে নির্দ্ধারিত লিঙ্গ?", "Sex"],
+            ["বসবাসের স্থান? (ভারত/বাংলাদেশ)", "Place of residence"],
             ["আপনি কতোবছর পশ্চিমবাংলায়/ বাংলাদেশে বসবাস করেছেন?", "00 yrs"],
             ["আপনার সর্বোচ্চ শিক্ষাগত স্তর কোনটি?", "Qualification"]
         ],

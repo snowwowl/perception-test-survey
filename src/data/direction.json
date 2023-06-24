@@ -1,0 +1,40 @@
+{
+    "en": {
+        "greeting": "Some details before you begin the test…",
+        "intro": [
+            "The objective of the perceptual test is to identify the geographical/linguistic nativity of Bengali speakers. In other words, to identify whether they are native speakers of Bangla, and where do they possibly come from (West Bengal / Bangladesh).",
+            "There are 3 sections in this test. Each section will take you 5-10 mins."
+        ],
+        "points": [
+            "In each test, you will be required to click on buttons to listen to the audio of words/sentences in Bangla. Kindly use headphones for the tests. ",
+            "You can play each audio for a maximum of three times.",
+            "You can change your answers in each set only until you click on ‘Submit’. Once you click on ‘Submit’, you cannot change your answers. ",
+            "After you complete each section, you can check your score. Your scores indicate how successful you were in identifying the nativity of Bangla speakers from their speech patterns. At the end of all the three tests, an overall score will be given to you."
+        ],
+        "sections": [
+            "Section 1: Words (2 sets) : click on a colour",
+            "Section 2: Sentences (4 sets) : choose the correct option",
+            "Section 3: Story excerpts (1 set) : click on a colour"
+        ],
+        "footer": "P.S. If you get all your answers correct, you receive a little gift for your efforts and excellence!"
+    },
+
+    "bn": {
+        "intro": [
+            "এই listening test এর মূল উদ্দেশ্য হল বক্তার গলার আওয়াজ, কথাবার্তার ধরণ থেকে বক্তার ভৌগোলিক ও ভাষাগত পরিচিতি সম্পর্কে ধারণা করা। অর্থাৎ, ধারণা করা: বক্তার মাতৃভাষা কি বাংলা? বক্তা কি পশ্চিমবাংলা নিবাসী নাকি বাংলাদেশ নিবাসী?",
+            "সব মিলিয়ে ৩টি অংশে ভাগ করা আছে এই listening test টি। প্রতিটি অংশের উত্তর দিতে ৫-১০ মিনিট সময় লাগবে।"
+        ],
+        "points": [
+            "অনুগ্রহ করে listening test টি চলাকালীন হেডফোন (headphones) ব্যবহার করবেন। ",
+            "প্রত্যেকটি শব্দ/বাক্য/অনুগল্প মোট ৩ বার (তার বেশী নয়) করে শোনা যেতে পারে, একই বোতাম টিপে।  ",
+            "‘Submit’ বোতামটি টেপার আগে যতবার প্রয়োজন, যেকোনো উত্তর বদলানো যাবে। কিন্তু একবার ‘Submit’ বোতামটি  টেপার পর আর তা করা যাবেনা। ",
+            "প্রতিটি অংশের উত্তর দেবার পর, চাইলে সেই অংশের score আলাদা করে জানতে পারবেন। তা থেকে বোঝা যাবে, শুধুমাত্র কথাবার্তা শুনে, বক্তাদের ভৌগোলিক ও ভাষাগত পরিচিতি সম্পর্কে আপনি কতোটা সঠিকভাবে ধারনা করতে পারেন। সবকটি অংশের উত্তর দেওয়া হলে চূড়ান্ত ফলাফল (final score) জানানো হবে। "
+        ],
+        "sections": [
+            "প্রথম অংশ: ২০টি ২০টি করে মোট চল্লিশটি শব্দ পরপর দুই দফায়  শোনানো হবে ।",
+            "দ্বিতীয় অংশ: পরপর ৪টি দফায় মোট চল্লিশটি বাক্য শোনানো হবে।",
+            "তৃতীয় অংশ: বিভিন্ন বক্তার গলায় একটিই অনুগল্পের অংশবিশেষ পরপর শোনানো হবে।"
+        ],
+        "footer": "একটি বিশেষ ঘোষণা: সবকটি প্রশ্নের সঠিক উত্তরদাতাদের সামান্য প্রতীকী উপহার দেবার ইচ্ছে রাখছি (অবশ্যই তাঁদের অনুমতিসাপেক্ষে)"
+    }
+}

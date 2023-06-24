@@ -16,10 +16,12 @@ import localforage from 'localforage';
 import { app, database } from '@/components/firebaseConfig';
 import { collection, addDoc } from 'firebase/firestore';
 
+import data from '@/data/finalform.json';
+
 const elsie = Elsie({ weight: '900', subsets: ['latin'] });
 const poppins = Poppins({ weight: '400', subsets: ['latin'] });
 
-export default function FinalForm() {
+export default function FinalForm({ pageData }) {
     const { push, query } = useRouter();
     const currLang = query.lang;
 
@@ -154,7 +156,7 @@ export default function FinalForm() {
         addDoc(dbInstance, finalObj).then((docRef) => {
             console.log(docRef);
             console.log("FINISHED");
-            push(`/completed`)
+            push(`/${currLang}/allresult`)
         })
     }
 
@@ -169,33 +171,33 @@ export default function FinalForm() {
             >
                 <Box pb={16}>
                     <Text fontFamily={poppins.style.fontFamily} fontSize={'lg'} py={2} color='white'>
-                        While your result is being prepared, please answer the following questions.
+                        {pageData.title}
                     </Text>
                     <Text fontFamily={poppins.style.fontFamily} fontWeight={'bold'} fontSize={'lg'} py={2} color='white'>
-                        What helped you make your choices?
+                        {pageData.q1}
                     </Text>
                 </Box>
                 <Box fontFamily={poppins.style.fontFamily}>
                     <Stack direction={'column'} spacing={8}>
                         <Box>
                             <Text fontFamily={poppins.style.fontFamily} fontSize={'lg'} py={2} color='white'>
-                                What speech features prompted you to choose the 'Bangali (from West Bengal)' category?
+                            {pageData.q2}
                             </Text>
-                            <Textarea {...register("final1")} height={'120px'} variant={'filled'} placeholder='Add your answer here' rounded={8} w='full' />
+                            <Textarea {...register("final1")} height={'120px'} variant={'filled'} placeholder={pageData.placeholder} rounded={8} w='full' />
                         </Box>
 
                         <Box>
                             <Text fontFamily={poppins.style.fontFamily} fontSize={'lg'} py={2} color='white'>
-                                What speech features prompted you to choose the 'Bangali (from Bangladesh)' category?
+                                {pageData.q3}
                             </Text>
-                            <Textarea {...register("final2")} height={'120px'} variant={'filled'} placeholder='Add your answer here' rounded={8} w='full' />
+                            <Textarea {...register("final2")} height={'120px'} variant={'filled'} placeholder={pageData.placeholder} rounded={8} w='full' />
                         </Box>
 
                         <Box>
                             <Text fontFamily={poppins.style.fontFamily} fontSize={'lg'} py={2} color='white'>
-                                What speech features prompted you to choose the 'Non-Bengali' category?
+                                {pageData.q4}
                             </Text>
-                            <Textarea {...register("final3")} height={'120px'} variant={'filled'} placeholder='Add your answer here' rounded={8} w='full' />
+                            <Textarea {...register("final3")} height={'120px'} variant={'filled'} placeholder={pageData.placeholder} rounded={8} w='full' />
                         </Box>
 
                     </Stack>
@@ -220,4 +222,26 @@ export default function FinalForm() {
 
         </>
     )
+}
+
+export async function getStaticPaths() {
+    return {
+        paths: [
+            { params: { lang: 'en' } },
+            { params: { lang: 'bn' } }
+        ],
+        fallback: false
+    }
+}
+
+export async function getStaticProps(context) {
+    const lang = context.params.lang;
+
+    return {
+        props: {
+            pageData: {
+                ...data[lang],
+            }
+        }
+    }
 }

@@ -58,7 +58,7 @@ export default function AddForm({ pageData }) {
         console.log(values);
         localforage.setItem("addform", values).then(() => {
             console.log('done upload add-form');
-            push(`/${currLang}/section-1/`);
+            push(`/${currLang}/consent/`);
         });
         
     }

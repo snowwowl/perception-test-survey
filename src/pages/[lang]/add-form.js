@@ -88,7 +88,7 @@ export default function AddForm({ pageData }) {
                                         {el[0]}
                                     </Text>
                                     <Divider color='#5151D2' height={'2px'} w='100px' />
-                                    <Input {...register(`addform.${3 + idx}.value`)} backgroundColor={'white'} width={'full'} variant={'filled'} placeholder={el[1]} />
+                                    <Input {...register(`addform.${4 + idx}.value`)} backgroundColor={'white'} width={'full'} variant={'filled'} placeholder={el[1]} />
                                 </Box>
                             )
                         })}

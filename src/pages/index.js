@@ -58,10 +58,6 @@ export default function Home() {
                 {
                   value: "en",
                   label: "English"
-                },
-                {
-                  value: 'bn',
-                  label: 'Bengali'
                 }
               ]}
               onSelect={(e) => {handleSelect(e)}}
